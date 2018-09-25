@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- Mirrored from hencework.com/theme/splasher/demo-1/morris-chart.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Sep 2018 20:10:55 GMT -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Conferencista | Stream UAO</title>
+        <meta name="description" content="Splasher is a Dashboard & Admin Site Responsive Template by hencework." />
+        <meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Splasher Admin, Splasheradmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
+        <meta name="author" content="hencework"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <!-- Morris Charts CSS -->
+        <link href="../vendors/bower_components/morris.js/morris.css" rel="stylesheet" type="text/css"/>
+        <link href="../vendors/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Custom CSS -->
+        <link href="../dist/css/style.css" rel="stylesheet" type="text/css">
+
+    </head>
+
+    <body>
+        <!--Preloader-->
+        <div class="preloader-it">
+            <div class="la-anim-1"></div>
+        </div>
+        <!--/Preloader-->
+        <div class="wrapper theme-2-active navbar-top-light horizontal-nav">
+
+            <!-- Top Menu Items -->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+
+                <div id="mobile_only_nav" class="mobile-only-nav pull-right">
+                    <ul class="nav navbar-right top-nav pull-right">
+
+
+
+
+
+                        <li class="dropdown auth-drp" style="margin-right: 10px">
+
+                            <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><i class="zmdi zmdi-videocam-switch top-nav-icon"></i></a>
+
+                            <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cloud-upload"></i><span>Subir video</span></a>
+                        </li>
+                        <li>
+                            <a href="#"  id="start-bt" onclick="transmitir()"><i class="fa fa-video-camera"></i><span>Transmitir en vivo</span></a>
+                        </li>
+
+                    </ul>
+                    </li>
+
+
+
+
+
+
+                    <li class="dropdown auth-drp">
+                        <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span><span class="user-auth-name inline-block">micheal hogan <span class="ti-angle-down"></span></span></a>
+                        <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+                            <li>
+                                <a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="zmdi zmdi-card"></i><span>Mis videos</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="sub-menu show-on-hover">
+                                <a href="#" class="dropdown-toggle pr-0 level-2-drp"><i class="zmdi zmdi-check text-success"></i> available</a>
+                                <ul class="dropdown-menu open-left-side">
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-check text-success"></i><span>available</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-circle-o text-warning"></i><span>busy</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-minus-circle-outline text-danger"></i><span>offline</span></a>
+                                    </li>
+                                </ul>	
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+
+
+            </nav>
+
+            <!-- Main Content -->
+            <div class="page-wrapper">
+                <div class="container">
+
+            
+                    <!--START: GUARDAR VIDEO-->
+                    
+                    <div class="row" >
+                        <div class="col-md-12">
+                            <div class="panel panel-default border-panel card-view">
+                                <div class="panel-heading">
+                                    <div id="img-live" hidden="true" style="margin-left: 50%"> <img src="img/Live-1.gif" width="30" height="30"></div>
+                                    <div class="pull-left">
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-wrapper collapse in">
+                                    <div style="background: black"  class="panel-body">
+                                        <center id="body-video-conferencista">
+                                            <iframe width="640" height="480"
+src="https://www.youtube.com/embed/vlDzYIIOYmM">
+</iframe><br>
+                                           <video id="local-video" autoplay style="max-width: 85%;height: auto;"></video>
+                                        </center>
+                                        <!--
+                                        <h2>Canvas Preview (Mirror)</h2>
+                                         <video id="canvas-preview" controls autoplay></video>
+                                         -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--END: GUARDAR VIDEO-->
+
+
+
+
+
+
+
+
+
+                    <div class="row" hidden="true" >
+                        <div class="col-lg-8">
+                            <div class="panel panel-default border-panel card-view">
+                                <div class="panel-heading">
+                                    <div class="pull-left">
+                                        <h6 class="panel-title txt-dark">Area Chart</h6>
+                                    </div>
+
+                                </div>
+                                <div class="panel-wrapper collapse in">
+                                    <div class="panel-body">
+
+
+                                        <!--EN ESTE DIV SE VISULIZA EL VIDEO STREAM
+                                        <div id="vid-box"></div>-->
+
+                                        <!--ESCRITORIO DE STREAM-->
+
+                                        <form name="streamForm" id="stream" action="#" onsubmit="return errWrap(stream, this);">
+                                            <span class="input input--nao">
+                                                <input class="input__field input__field--nao" type="text" name="streamname" placeholder="Enter Stream Name" id="streamname"/>
+                                                <label class="input__label input__label--nao" for="streamname">
+                                                    <span class="input__label-content input__label-content--nao">        
+                                                    </span>
+                                                </label>
+                                                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+
+                                            </span>
+
+                                            <button class="cbutton cbutton--effect-radomir" type="submit" value="Stream" name="stream_submit" style="margin-top: 40px; margin-left:-10px">
+                                                <i class="cbutton__icon fa fa-fw fa fa fa-video-camera"></i>
+                                            </button>
+                                        </form>
+
+
+                                        <form name="watchForm" id="watch" action="#" onsubmit="return errWrap(watch, this);">
+                                            <span class="input input--nao">
+                                                <input class="input__field input__field--nao" type="text" name="number" placeholder="Enter Stream To Watch!"/>
+                                                <label class="input__label input__label--nao" for="number">
+                                                    <span class="input__label-content input__label-content--nao">        
+                                                    </span>
+                                                </label>
+                                                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+
+                                            </span>
+
+                                            <button class="cbutton cbutton--effect-radomir" type="submit" value="Watch" style="margin-top: 40px; margin-left:-10px">
+                                                <i class="cbutton__icon fa fa-fw fa fa-eye"></i>
+                                            </button>
+                                        </form>
+
+
+
+                                        <!--EN ESTE DIV MUESTRA CUANTOS HAY CONECTADOS-->
+                                        <div id="stream-info" hidden="true">
+                                            <button id="end" onclick="end()" hidden="true">Done</button>
+                                            <img class="user-img img-circle block pull-left"  src="../img/user.png" alt="user"/>
+                                            <span id="here-now">0</span>       
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default border-panel card-view">
+                                <div class="panel-heading">
+                                    <div class="pull-left">
+                                        <h6 class="panel-title txt-dark">line Chart</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-wrapper collapse in">
+                                    <div class="panel-body">
+
+                                        <!--Start: Chat-->
+
+                                        <div  id="chat_tab" class="tab-pane fade active in" role="tabpanel">
+                                            <div class="chat-cmplt-wrap">
+
+                                                <div class="recent-chat-box-wrapdddd">
+                                                    <div class="recent-chat-wrap">
+
+                                                        <div class="panel-wrapper collapse in">
+                                                            <div class="panel-body pa-0">
+                                                                <div id="mensajeChat" class="chat-content" id="mensajeChat">
+                                                                    <ul class="nicescroll-bar pt-20">
+                                                                        <li class="friend">
+                                                                            <div class="friend-msg-wrap">
+                                                                                <img class="user-img img-circle block pull-left"  src="img/user.png" alt="user"/>
+                                                                                <div class="msg pull-left">
+                                                                                    <p>Hello Jason, how are you, it's been a long time since we last met?</p>
+                                                                                    <div class="msg-per-detail text-right">
+                                                                                        <span class="msg-time txt-light">2:30 PM</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clearfix"></div>
+                                                                            </div>	
+                                                                        </li>
+                                                                        <li class="self mb-10">
+                                                                            <div class="self-msg-wrap">
+                                                                                <div class="msg block pull-right"> Oh, hi Sarah I'm have got a new job now and is going great.
+                                                                                    <div class="msg-per-detail text-right">
+                                                                                        <span class="msg-time txt-light">2:31 pm</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clearfix"></div>
+                                                                            </div>	
+                                                                        </li>
+                                                                        <li class="self">
+                                                                            <div class="self-msg-wrap">
+                                                                                <div class="msg block pull-right">  How about you?
+                                                                                    <div class="msg-per-detail text-right">
+                                                                                        <span class="msg-time txt-light">2:31 pm</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clearfix"></div>
+                                                                            </div>	
+                                                                        </li>
+                                                                        <li class="friend">
+                                                                            <div class="friend-msg-wrap">
+                                                                                <img class="user-img img-circle block pull-left"  src="img/user.png" alt="user"/>
+                                                                                <div class="msg pull-left"> 
+                                                                                    <p>Not too bad.</p>
+                                                                                    <div class="msg-per-detail  text-right">
+                                                                                        <span class="msg-time txt-light">2:35 pm</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clearfix"></div>
+                                                                            </div>	
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="input-group">
+                                                                    <input type="text" id="input_msg_send" name="send-msg" class="input-msg-send form-control" placeholder="Type something">
+                                                                    <div class="input-group-btn emojis">
+                                                                        <div class="dropup">
+                                                                            <button type="button" class="btn  btn-default  dropdown-toggle" data-toggle="dropdown" ><i class="zmdi zmdi-mood"></i></button>
+                                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                                <li><a href="javascript:void(0)">Action</a></li>
+                                                                                <li><a href="javascript:void(0)">Another action</a></li>
+                                                                                <li class="divider"></li>
+                                                                                <li><a href="javascript:void(0)">Separated link</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="input-group-btn attachment">
+                                                                        <div class="fileupload btn  btn-default"><i class="zmdi zmdi-attachment-alt"></i>
+                                                                            <input type="file" class="upload">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--End: Chat-->
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel panel-default border-panel card-view">
+                                <div class="panel-heading">
+                                    <div class="pull-left">
+                                        <h6 class="panel-title txt-dark">bar Chart</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-wrapper collapse in">
+                                    <div class="panel-body">
+                                        <div id="morris_bar_chart" class="morris-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer pl-30 pr-30">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>2018 &copy; Splasher. Pampered by Hencework</p>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <p>Follow Us</p>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- /Footer -->
+
+            </div>
+            <!-- /Main Content -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- JavaScript -->
+
+        <!-- SOCKET IO
+
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script> -->
+
+        <!-- jQuery -->
+        <script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Morris Charts JavaScript -->
+        <script src="../vendors/bower_components/raphael/raphael.min.js"></script>
+        <script src="../vendors/bower_components/morris.js/morris.min.js"></script>
+        <script src="../dist/js/morris-data.js"></script>
+
+        <!-- Slimscroll JavaScript -->
+        <script src="../dist/js/jquery.slimscroll.js"></script>
+
+        <!-- Owl JavaScript -->
+        <script src="../vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+        <!-- Switchery JavaScript -->
+        <script src="../vendors/bower_components/switchery/dist/switchery.min.js"></script>
+
+        <!-- Fancy Dropdown JS -->
+        <script src="../dist/js/dropdown-bootstrap-extended.js"></script>
+
+        <!-- Init JavaScript -->
+        <script src="../dist/js/init.js"></script>
+
+        <!-- RECORD AND SAVE STREAM -->
+        <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+        <!--LLAMADOS A WEBRTC-->
+        <script src="scripts/simplewebrtc/out/simplewebrtc-with-adapter.bundle.js"></script>
+        <script src="js/sender.js"></script> 
+
+    <!--LLAMADOS A FIREBASE-->
+      <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>   
+      <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+      <script src="js/comments.js"></script> 
+
+        <script type="text/javascript">
+               $(document).ready(function(){
+                    read();
+                });
+        </script>
+
+    </body>
+
+
+    <!-- Mirrored from hencework.com/theme/splasher/demo-1/morris-chart.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Sep 2018 20:10:56 GMT -->
+</html>
