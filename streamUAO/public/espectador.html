@@ -20,6 +20,9 @@
     <link href="../vendors/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- Custom CSS -->
     <link href="../dist/css/style.css" rel="stylesheet" type="text/css">
+
+    <!--CALIFICACION CSS--> 
+	<link href="../css/calificaciones.css" rel="stylesheet" type="text/css">   
 </head>
 
 <body>
@@ -359,6 +362,14 @@
 											<div id="remote-video" style="max-width: 85%;height: auto;"></div>
                                         </center>
        									<button onclick="unirse()" >Recibir</button>
+
+       									  <span id="star-rating" class="star-rating">
+    <input id="s1" type="radio" name="rating" value="1" onclick="upload(1)"><i></i>
+    <input id="s2" type="radio" name="rating" value="2" onclick="upload(2)"><i></i>
+    <input id="s3" type="radio" name="rating" value="3" onclick="upload(3)"><i></i>
+    <input id="s4" type="radio" name="rating" value="4" onclick="upload(4)"><i></i>
+    <input id="s5" type="radio" name="rating" value="5" onclick="upload(5)"><i></i>
+  </span>
 									</div>
 								</div>
 							</div>
@@ -420,8 +431,16 @@
     <script src="../js/receiver.js"></script>
 
     <!--LLAMADOS A FIREBASE-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>	 
-	  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>	  
+  
+
+
+
+
+
 	  <script src="js/comments.js"></script>
 
 	  <!--SET USER DATA-->
